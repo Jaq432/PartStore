@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+  Copyright (c) 2015, 2019, Gluon and/or its affiliates.
+  All rights reserved. Use is subject to license terms.
+
+  This file is available and licensed under the following license:
+
+  Redistribution and use in source and binary forms, with or without
+  modification, are permitted provided that the following conditions
+  are met:
+
+  - Redistributions of source code must retain the above copyright
+    notice, this list of conditions and the following disclaimer.
+  - Redistributions in binary form must reproduce the above copyright
+    notice, this list of conditions and the following disclaimer in
+    the documentation and/or other materials provided with the distribution.
+  - Neither the name of Oracle Corporation nor the names of its
+    contributors may be used to endorse or promote products derived
+    from this software without specific prior written permission.
+
+  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+  "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
+  LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR
+  A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT
+  OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,
+  SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT
+  LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
+  DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY
+  THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+  (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
+  OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+-->
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox prefHeight="400.0" prefWidth="501.0" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.ControllerAddPartScreen">
+   <children>
+      <AnchorPane maxHeight="-1.0" maxWidth="-1.0" prefHeight="400.0" prefWidth="533.0" VBox.vgrow="ALWAYS">
+         <children>
+            <Button fx:id="addPartScreenCancelButton" layoutX="427.0" layoutY="361.0" mnemonicParsing="false" onAction="#addPartScreenCancelButtonPushed" text="Cancel" />
+            <AnchorPane fx:id="partsPane" layoutX="37.0" layoutY="39.0" prefHeight="296.0" prefWidth="441.0">
+               <children>
+                  <Label fx:id="addPartIDLabel" layoutX="4.0" layoutY="40.0" text="ID">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="addPartNameLabel" layoutX="4.0" layoutY="72.0" text="Name">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="addPartInventoryLabel" layoutX="4.0" layoutY="107.0" text="Inventory">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="addPartPriceCostLabel" layoutX="4.0" layoutY="140.0" text="Price/Cost">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="addPartMaxLabel" layoutX="6.0" layoutY="170.0" text="Max">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="addPartMachineIdLabel" layoutX="6.0" layoutY="200.0" prefHeight="17.0" prefWidth="101.0" text="Machine ID">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="addPartId" layoutX="114.0" layoutY="36.0" prefHeight="25.0" prefWidth="140.0" promptText="Auto Gen- Disabled" />
+                  <TextField fx:id="addPartName" layoutX="114.0" layoutY="68.0" prefHeight="25.0" prefWidth="140.0" promptText="Enter Name" />
+                  <TextField fx:id="addPartInventory" layoutX="114.0" layoutY="103.0" prefHeight="25.0" prefWidth="140.0" promptText="Enter Number in Inventory" />
+                  <TextField fx:id="addPartPriceCost" layoutX="114.0" layoutY="136.0" prefHeight="25.0" prefWidth="140.0" promptText="Enter Price/Cost" />
+                  <TextField fx:id="addPartMax" layoutX="114.0" layoutY="166.0" prefHeight="25.0" prefWidth="140.0" promptText="Enter Max" />
+                  <TextField fx:id="addPartMachineId" layoutX="114.0" layoutY="196.0" prefHeight="25.0" prefWidth="140.0" promptText="Enter Machine ID" />
+                  <Label fx:id="addPartMaxLabel1" layoutX="269.0" layoutY="172.0" text="Min">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="addPartMin" layoutX="303.0" layoutY="168.0" prefHeight="25.0" prefWidth="140.0" promptText="Enter Min" />
+               </children>
+            </AnchorPane>
+            <Button fx:id="saveButton" layoutX="379.0" layoutY="361.0" mnemonicParsing="false" onAction="#addPartScreenSaveButtonPushed" text="Save" />
+            <Label fx:id="addPartLabel" layoutX="27.0" layoutY="14.0" text="Add Part">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Label>
+            <RadioButton fx:id="inHouseButton" layoutX="100.0" layoutY="15.0" mnemonicParsing="false" onAction="#addPartRadioButtonSwitch" selected="true" text="In-House">
+               <toggleGroup>
+                  <ToggleGroup fx:id="addPartSelection" />
+               </toggleGroup></RadioButton>
+            <RadioButton fx:id="outsourcedButton" layoutX="192.0" layoutY="15.0" mnemonicParsing="false" onAction="#addPartRadioButtonSwitch" text="Outsourced" toggleGroup="$addPartSelection" />
+         </children>
+      </AnchorPane>
+   </children>
+</VBox>
